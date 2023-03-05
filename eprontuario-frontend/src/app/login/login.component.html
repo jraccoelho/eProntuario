@@ -1,0 +1,69 @@
+<mat-card class="contentBody">
+  <mat-card-content>
+    <mat-card-title> Acesso ao eProntu&aacute;rio </mat-card-title>
+
+    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            formControlName="userName"
+            matInput
+            placeholder="Informe seu e-mail"
+            required
+          />
+          <mat-error *ngIf="!loginForm.controls['userName'].valid">
+            Por favor, informe um e-mail v&aacute;lido.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <span>
+          <button
+            type="button"
+            mat-flat-button
+            class="aLink"
+            (click)="openDialog()"
+          >
+            Esqueceu sua senha?
+          </button>
+        </span>
+      </div>
+      <div class="pwdInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input
+            formControlName="password"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            placeholder="Informe sua senha"
+            required
+          />
+          <button
+            type="button"
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+          >
+            <mat-icon>
+              {{ hide ? "visibility_off" : "visibility" }}
+            </mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid">
+            Sua senha deve conter entre 12 e 25 caracteres.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        mat-flat-button
+        color="accent"
+      >
+        Entrar
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

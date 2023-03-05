@@ -1,0 +1,38 @@
+mat-card {
+  max-width: 600px;
+  background-color: #ff830f;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 600px;
+}
+
+mat-card-title{
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+
+.full-width {
+  width: 80%;
+}
+
+.emailInput{
+  padding-top: 10px;
+}
+
+.pwdInput{
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+.contentBody {
+  padding: 60px 1rem;
+  display: block;
+}
+
+.aLink{
+  float: right;
+  margin-right:60px;
+  text-decoration: none;
+}
